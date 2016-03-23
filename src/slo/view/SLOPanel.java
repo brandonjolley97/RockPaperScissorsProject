@@ -21,6 +21,9 @@ public class SLOPanel extends JPanel
 	private JButton paperButton;
 	private JButton scissorsButton;
 	private boolean isSP = false;
+	private boolean scissorsSelected = false;
+	private boolean rockSelected = false;
+	private boolean paperSelected = false;
 	private int numWins = 0;
 	private int numLosses = 0;
 	private String pOneSelection = "";
@@ -129,6 +132,7 @@ public class SLOPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				rockSelected = true;
 				
 				if(isSP == true)
 				{
@@ -156,7 +160,30 @@ public class SLOPanel extends JPanel
 				else
 				{
 					resultsDisplay.setText("Player 1 results saved.  Player 2 may now select");
-					pOneSelection = "Rock";
+					if(scissorsSelected == true || rockSelected == true || paperSelected == true)
+					{
+						pTwoSelection = "Rock";
+						
+						if(pOneSelection == "Paper")
+						{
+							resultsDisplay.setText("Player One Wins! Paper beats Rock!");
+						}
+						else if(pOneSelection == "Rock")
+						{
+							resultsDisplay.setText("Tie!");
+						}
+						else if(pOneSelection == "Scissors")
+						{
+							resultsDisplay.setText("Player Two Wins!  Rock beats Scissors!");
+						}
+						
+						pOneSelection = "";
+						pTwoSelection = "";
+					}
+					else
+					{
+						pOneSelection = "Rock";
+					}
 				}
 					
 			}
@@ -166,6 +193,8 @@ public class SLOPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				paperSelected = true;
+				
 				if(isSP == true)
 				{
 					String result = baseController.outcomeSelector();
@@ -191,7 +220,32 @@ public class SLOPanel extends JPanel
 				}
 				else
 				{
-					pOneSelection = "Paper";
+					if(scissorsSelected == true || rockSelected == true || paperSelected == true)
+					{
+						pTwoSelection = "Paper";
+						
+						if(pOneSelection == "Paper")
+						{
+							resultsDisplay.setText("Tie!");
+						}
+						else if(pOneSelection == "Rock")
+						{
+							resultsDisplay.setText("Player Two Wins!  Paper beats Rock!");
+						}
+						else if(pOneSelection == "Scissors")
+						{
+							resultsDisplay.setText("Player One Wins!  Scissors beats Paper!");
+						}
+						
+						pOneSelection = "";
+						pTwoSelection = "";
+					}
+					else
+					{
+						pOneSelection = "Paper";
+					}
+					
+					
 				}
 					
 			}
@@ -201,6 +255,8 @@ public class SLOPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				scissorsSelected = true;
+				
 				if(isSP == true)
 				{
 					String result = baseController.outcomeSelector();
@@ -226,7 +282,31 @@ public class SLOPanel extends JPanel
 				}
 				else
 				{
-					pOneSelection = "Scissors";
+					if(scissorsSelected == true || rockSelected == true || paperSelected == true)
+					{
+						pTwoSelection = "Scissors";
+						
+						if(pOneSelection == "Paper")
+						{
+							resultsDisplay.setText("Player Two Wins!  Scissors beats Paper!");
+						}
+						else if(pOneSelection == "Rock")
+						{
+							resultsDisplay.setText("Player One Wins!  Rock beats Scissors!");
+						}
+						else if(pOneSelection == "Scissors")
+						{
+							resultsDisplay.setText("Tie!");
+						}
+						
+						pOneSelection = "";
+						pTwoSelection = "";
+					}
+					else
+					{
+						pOneSelection = "Scissors";
+					}
+					
 				}
 					
 			}
