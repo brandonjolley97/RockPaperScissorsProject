@@ -6,9 +6,6 @@ import java.util.Random;
 public class SLOModel 
 {
 	private ArrayList<String> outcomeList;
-	int rock = 0;
-	int paper = 1;
-	int scissors = 2;
 	Random outcomeGenerator = new Random();
 	
 	public SLOModel()

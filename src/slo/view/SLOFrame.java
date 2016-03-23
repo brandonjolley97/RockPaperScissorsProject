@@ -1,11 +1,9 @@
 package slo.view;
 
-import slo.controller.*;
-import slo.view.*;
+import slo.controller.SLOController;
+import slo.view.SLOPanel;
 
 import javax.swing.JFrame;
-
-import slo.controller.SLOController;
 
 public class SLOFrame extends JFrame
 {

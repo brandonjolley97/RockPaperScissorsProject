@@ -110,6 +110,7 @@ public class SLOPanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				numWins = 0;
+				numLosses = 0;
 				isSP = true;
 				promptLabel.setText("Choose Rock, Paper, or Scissors");
 					
@@ -121,6 +122,7 @@ public class SLOPanel extends JPanel
 
 			public void actionPerformed(ActionEvent click)
 			{
+				numWins = 0;
 				numLosses = 0;
 				isSP = false;
 				promptLabel.setText("Choose Rock, Paper, or Scissors");
@@ -157,9 +159,8 @@ public class SLOPanel extends JPanel
 						WLDisplay.setText("Wins: " + numWins + " Losses: " + numLosses);
 					}
 				}
-				else
+				else if(isSP == false)
 				{
-					resultsDisplay.setText("Player 1 results saved.  Player 2 may now select");
 					if(scissorsSelected == true || rockSelected == true || paperSelected == true)
 					{
 						pTwoSelection = "Rock";
@@ -182,6 +183,7 @@ public class SLOPanel extends JPanel
 					}
 					else
 					{
+						resultsDisplay.setText("Player 1 results saved.  Player 2 may now select");
 						pOneSelection = "Rock";
 					}
 				}
@@ -218,7 +220,7 @@ public class SLOPanel extends JPanel
 						WLDisplay.setText("Wins: " + numWins + " Losses: " + numLosses);
 					}
 				}
-				else
+				else if(isSP == false)
 				{
 					if(scissorsSelected == true || rockSelected == true || paperSelected == true)
 					{
@@ -242,6 +244,7 @@ public class SLOPanel extends JPanel
 					}
 					else
 					{
+						resultsDisplay.setText("Player 1 results saved.  Player 2 may now select");
 						pOneSelection = "Paper";
 					}
 					
@@ -280,7 +283,7 @@ public class SLOPanel extends JPanel
 						WLDisplay.setText("Wins: " + numWins + " Losses: " + numLosses);
 					}
 				}
-				else
+				else if(isSP == false)
 				{
 					if(scissorsSelected == true || rockSelected == true || paperSelected == true)
 					{
@@ -304,6 +307,7 @@ public class SLOPanel extends JPanel
 					}
 					else
 					{
+						resultsDisplay.setText("Player 1 results saved.  Player 2 may now select");
 						pOneSelection = "Scissors";
 					}
 					
