@@ -10,7 +10,7 @@ public class SLOFrame extends JFrame
 	private SLOController baseController;
 	private SLOPanel basePanel;
 	
-	public SLOFrame()
+	public SLOFrame(SLOController baseController)
 	{
 		this.baseController = baseController;
 		basePanel = new SLOPanel(baseController);

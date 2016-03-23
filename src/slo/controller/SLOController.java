@@ -12,7 +12,7 @@ public class SLOController
 	
 	public SLOController()
 	{
-		baseFrame = new SLOFrame();
+		baseFrame = new SLOFrame(this);
 		baseModel = new SLOModel();
 	}
 	
